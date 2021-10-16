@@ -1,0 +1,5 @@
+development:
+  dialect: postgres
+  datasource: host=ec2-44-199-111-161.compute-1.amazonaws.com dbname=d68joipo1e5af3 user=lneovlgfqenrrk password=57a4a43507c7bd653110519e4e70ca735c5b5263f7e766b215e1aa1637c2c086 sslmode=require
+  dir: migrations
+  table: migrations
