@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"context"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/samctang/socoro_api/database"
 	"github.com/samctang/socoro_api/models"
@@ -10,8 +9,18 @@ import (
 	"net/http"
 )
 
-// GetOperations Get /operation
+// swagger:operation GET /operation operation GetOperations
 // Gets all operations
+// ---
+// produces:
+// - application/json
+// responses:
+//     '200':
+//         description: Success
+//     '400':
+//         description: Bad request
+//     '500':
+//         description: Internal server error
 func GetOperations(c *gin.Context) {
 
 	rows, err := database.Conn.Query(context.Background(), "select id, operation_no from operations")
@@ -33,6 +42,5 @@ func GetOperations(c *gin.Context) {
 		log.Fatal(err)
 	}
 
-	fmt.Println(rowSlice)
 	c.JSON(http.StatusOK, gin.H{"data": rowSlice})
 }
