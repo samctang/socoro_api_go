@@ -10,14 +10,8 @@ import (
 	"net/http"
 )
 
-// GetOperations godoc
-// @Summary Show all operations
-// @Description gets all operations by *
-// @Accept  json
-// @Produce  json
-// @Success 200 {object} models.Operation
-// @Header 200 {string} Token "qwerty"
-// @Router /operation/ [get]
+// GetOperations Get /operation
+// Gets all operations
 func GetOperations(c *gin.Context) {
 
 	rows, err := database.Conn.Query(context.Background(), "select id, operation_no from operations")
