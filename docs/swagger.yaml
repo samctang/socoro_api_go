@@ -1,0 +1,139 @@
+basePath: /api/v1
+definitions:
+  models.Operation:
+    properties:
+      agent_id:
+        type: integer
+      agent_ref_no:
+        type: string
+      carrier_id:
+        type: integer
+      company_id:
+        type: integer
+      completed_date:
+        type: string
+      consignee_id:
+        type: integer
+      consignee_ref_no:
+        type: string
+      destination_addr1:
+        type: string
+      destination_addr2:
+        type: string
+      destination_city:
+        type: string
+      destination_country:
+        type: string
+      destination_state:
+        type: string
+      destination_zip:
+        type: string
+      employee_id:
+        type: integer
+      id:
+        type: integer
+      last_modified_by:
+        type: string
+      last_modified_on:
+        type: string
+      operation_no:
+        type: string
+      operation_type_id:
+        type: integer
+      origin_addr1:
+        type: string
+      origin_addr2:
+        type: string
+      origin_city:
+        type: string
+      origin_country:
+        type: string
+      origin_state:
+        type: string
+      origin_zip:
+        type: string
+      port_of_departure:
+        type: string
+      port_of_loading:
+        type: string
+      progress:
+        type: integer
+      shipper_id:
+        type: integer
+      shipper_ref_no:
+        type: string
+      status:
+        type: integer
+      submitted_date:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server celler server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /operation/:
+    get:
+      consumes:
+      - application/json
+      description: gets all operations by *
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          headers:
+            Token:
+              description: qwerty
+              type: string
+          schema:
+            $ref: '#/definitions/models.Operation'
+      summary: Show all operations
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+  BasicAuth:
+    type: basic
+  OAuth2AccessCode:
+    authorizationUrl: https://example.com/oauth/authorize
+    flow: accessCode
+    scopes:
+      admin: ' Grants read and write access to administrative information'
+    tokenUrl: https://example.com/oauth/token
+    type: oauth2
+  OAuth2Application:
+    flow: application
+    scopes:
+      admin: ' Grants read and write access to administrative information'
+      write: ' Grants write access'
+    tokenUrl: https://example.com/oauth/token
+    type: oauth2
+  OAuth2Implicit:
+    authorizationUrl: https://example.com/oauth/authorize
+    flow: implicit
+    scopes:
+      admin: ' Grants read and write access to administrative information'
+      write: ' Grants write access'
+    type: oauth2
+  OAuth2Password:
+    flow: password
+    scopes:
+      admin: ' Grants read and write access to administrative information'
+      read: ' Grants read access'
+      write: ' Grants write access'
+    tokenUrl: https://example.com/oauth/token
+    type: oauth2
+swagger: "2.0"
+x-extension-openapi:
+  example: value on a json format

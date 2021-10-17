@@ -10,8 +10,14 @@ import (
 	"net/http"
 )
 
-// GetOperations GET /operation
-// Get all operations
+// GetOperations godoc
+// @Summary Show all operations
+// @Description gets all operations by *
+// @Accept  json
+// @Produce  json
+// @Success 200 {object} models.Operation
+// @Header 200 {string} Token "qwerty"
+// @Router /operation/ [get]
 func GetOperations(c *gin.Context) {
 
 	rows, err := database.Conn.Query(context.Background(), "select id, operation_no from operations")
@@ -25,7 +31,7 @@ func GetOperations(c *gin.Context) {
 		var r models.Operation
 		err := rows.Scan(&r.ID, &r.OperationNo)
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal(err) //add conditions for httputil
 		}
 		rowSlice = append(rowSlice, r)
 	}
