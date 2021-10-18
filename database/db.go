@@ -8,9 +8,9 @@ import (
 )
 
 var Conn *pgxpool.Pool
-// Client start DB connection
+// SetupDB start DB connection
 // sets Conn variable
-func Client() {
+func SetupDB() {
 	os.Setenv("DATABASE_URL","postgres://lneovlgfqenrrk:57a4a43507c7bd653110519e4e70ca735c5b5263f7e766b215e1aa1637c2c086@ec2-44-199-111-161.compute-1.amazonaws.com:5432/d68joipo1e5af3")
 	conn, err := pgxpool.Connect(context.Background(), os.Getenv("DATABASE_URL"))
 	if err != nil {

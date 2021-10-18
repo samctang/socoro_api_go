@@ -4,6 +4,8 @@ import (
 	"time"
 )
 
+type Operations []Operation
+
 type Operation struct {
 	ID                 int       `json:"id"`
 	CompanyId          int       `json:"company_id"`

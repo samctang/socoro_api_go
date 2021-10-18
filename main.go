@@ -12,8 +12,8 @@ import (
 func main() {
 	os.Setenv("PORT", "8080")
 
-	// Start DB Client and terminate connection at the end
-	database.Client()
+	// Set up DB and terminate connection at the end
+	database.SetupDB()
 	defer database.Conn.Close()
 
 	r := gin.Default()
