@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/gin-contrib/cors"
-	"github.com/gin-gonic/gin"
-	"github.com/samctang/socoro_api/controllers"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"github.com/samctang/socoro_api/database"
+	"github.com/samctang/socoro_api/operation"
+	"github.com/samctang/socoro_api/user"
 	"os"
-	"time"
 )
 
 func main() {
@@ -16,26 +16,18 @@ func main() {
 	database.SetupDB()
 	defer database.Conn.Close()
 
-	r := gin.Default()
+	// Echo instance
+	e := echo.New()
 
-	// CORS for localhost and https://github.com origins, allowing:
-	// - * methods
-	// - Origin header
-	// - Credentials share
-	// - Preflight requests cached for 12 hours
-	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"*"},
-		AllowMethods:     []string{"*"},
-		AllowHeaders:     []string{"Origin"},
-		ExposeHeaders:    []string{"Content-Length"},
-		AllowCredentials: true,
-		AllowOriginFunc: func(origin string) bool {
-			return origin == "https://github.com"
-		},
-		MaxAge: 12 * time.Hour,
-	}))
+	// Middleware
+	e.Use(middleware.CORS()) //remove this for prod deployment
+	e.Use(middleware.Logger())
+	e.Use(middleware.Recover())
 
-	r.GET("/operation", controllers.GetOperations)
+	// Routes
+	e.POST("/user/register", user.Register)
+	e.POST("/user/login", user.Login)
+	e.GET("/operation", operation.GetOperations)
 
-	r.Run()
+	e.Logger.Fatal(e.Start(":1323"))
 }

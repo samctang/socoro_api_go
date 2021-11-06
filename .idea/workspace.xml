@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7664b186-39ed-4c80-8078-0df42b7d190d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/20211024163704-create_user_acc_table.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/login.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/756e9897-c5ab-43a8-a53d-9429ce4afee7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/756e9897-c5ab-43a8-a53d-9429ce4afee7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/756e9897-c5ab-43a8-a53d-9429ce4afee7/storage_v2/_src_/database/d68joipo1e5af3.SoVbVw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/756e9897-c5ab-43a8-a53d-9429ce4afee7/storage_v2/_src_/database/d68joipo1e5af3.SoVbVw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/database/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/operation.go" beforeDir="false" afterPath="$PROJECT_DIR$/user/register.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/operation.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/operation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/20211016131055-create_operations_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20211016131055-create_operation_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/operation.go" beforeDir="false" afterPath="$PROJECT_DIR$/operation/operation.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,10 +74,12 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/operation" />
+      <recent name="$PROJECT_DIR$/user" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/docs" />
     </key>

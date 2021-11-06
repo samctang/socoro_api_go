@@ -1,9 +1,9 @@
 
 -- +migrate Up
-CREATE TABLE IF NOT EXISTS operations (
+CREATE TABLE IF NOT EXISTS operation (
     id serial PRIMARY KEY,
     company_id INT NOT NULL,
-    employee_id INT NOT NULL,
+    user_id INT NOT NULL,
     operation_no text UNIQUE NOT NULL,
     operation_type_id INT NOT NULL,
     agent_id INT,
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS operations (
     completed_date TIMESTAMP,
     last_modified_by text NOT NULL,
     last_modified_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-    );
+);
 
 -- +migrate Down
-DROP TABLE operations;
+DROP TABLE operation;
